@@ -1,0 +1,285 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={STORMPROJECT},
+            pdfauthor={Juan David Rico Velasco},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{STORMPROJECT}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Juan David Rico Velasco}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{30 de agosto de 2020}
+
+
+\begin{document}
+\maketitle
+
+\subsection{R Markdown}\label{r-markdown}
+
+\section{Synopsis}\label{synopsis}
+
+Storms and other severe weather events have huge impact on public health
+and economic problems for municipalities and their inhabitants. Some of
+severe events can cause injuries property damage and even lead to death.
+This analysis present which types of events are most harmful with
+respect to population health and which have the greatest economic
+consequences.
+
+\section{Data Processing}\label{data-processing}
+
+I'm going to use The U.S. National Oceanic and Atmospheric
+Administration's (NOAA) storm database which tracks characteristics of
+major storms and weather events in the United States. This dataset comes
+from the Internet.
+
+Download file from the Internet:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{link <-}\StringTok{ "http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"}
+\KeywordTok{download.file}\NormalTok{(}\DataTypeTok{url =}\NormalTok{ link, }\DataTypeTok{destfile =} \StringTok{"StormData"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Read a file in table format
+
+Property damage estimates were entered as actual dollar amounts (the
+variable PROPDMG). But they were rounded to three significant digits,
+followed by an alphabetical character signifying the magnitude of the
+number, i.e., 1.55B for \$1,550,000,000. Alphabetical characters used to
+signify magnitude include ``K'' for thousands, ``M'' for millions, and
+``B'' for billions. So I created a new variable PROPDMGEXP2 and assigned
+conditionally ``K'' = 1000, ``M'' = 1000000, ``B'' = 1000000000, in
+other cases 1. These variables are multiplied in the next step.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{table}\NormalTok{(StormData}\OperatorTok{$}\NormalTok{PROPDMGEXP)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##      -      ?      +      0      1      2      3      4      5      6 
+##      1      8      5    216     25     13      4      4     28      4 
+##      7      8      B      h      H      K      m      M 
+##      5      1     40      1      6 424665      7  11330
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{StormData}\OperatorTok{$}\NormalTok{PROPDMGEXP2 <-}\StringTok{ }\DecValTok{1}
+\NormalTok{StormData}\OperatorTok{$}\NormalTok{PROPDMGEXP2[}\KeywordTok{which}\NormalTok{(StormData}\OperatorTok{$}\NormalTok{PROPDMGEXP }\OperatorTok{==}\StringTok{ "K"}\NormalTok{)] <-}\StringTok{ }\DecValTok{1000}
+\NormalTok{StormData}\OperatorTok{$}\NormalTok{PROPDMGEXP2[}\KeywordTok{which}\NormalTok{(StormData}\OperatorTok{$}\NormalTok{PROPDMGEXP }\OperatorTok{==}\StringTok{ "M"} \OperatorTok{|}\StringTok{ }\NormalTok{StormData}\OperatorTok{$}\NormalTok{PROPDMGEXP }\OperatorTok{==}\StringTok{ "m"}\NormalTok{)] <-}\StringTok{ }\DecValTok{1000000}
+\NormalTok{StormData}\OperatorTok{$}\NormalTok{PROPDMGEXP2[}\KeywordTok{which}\NormalTok{(StormData}\OperatorTok{$}\NormalTok{PROPDMGEXP }\OperatorTok{==}\StringTok{ "B"}\NormalTok{)] <-}\StringTok{ }\DecValTok{1000000000}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{table}\NormalTok{(StormData}\OperatorTok{$}\NormalTok{PROPDMGEXP2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##      1   1000  1e+06  1e+09 
+## 466255 424665  11337     40
+\end{verbatim}
+
+\section{Which types of events are most harmful to population
+health?}\label{which-types-of-events-are-most-harmful-to-population-health}
+
+Fatalities and injuries have the most impact on public health, so I will
+present what types of severe weather are the most dangerous.
+
+The first plot presents a Death toll by Event type
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{StormData }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{select}\NormalTok{(FATALITIES, EVTYPE) }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{group_by}\NormalTok{(EVTYPE) }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{SumFATALITIES =} \KeywordTok{sum}\NormalTok{(FATALITIES)) }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{top_n}\NormalTok{(}\DataTypeTok{n =} \DecValTok{8}\NormalTok{, }\DataTypeTok{wt =}\NormalTok{ SumFATALITIES) }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ SumFATALITIES, }\DataTypeTok{x =} \KeywordTok{reorder}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ EVTYPE, }\DataTypeTok{X =}\NormalTok{ SumFATALITIES), }\DataTypeTok{fill=}\NormalTok{EVTYPE))}\OperatorTok{+}
+\StringTok{      }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{, }\DataTypeTok{show.legend =} \OtherTok{FALSE}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\CommentTok{#geom_text(aes(label=SumFATALITIES), size = 4, hjust = 0.5, vjust = -0.1) +}
+\StringTok{      }\KeywordTok{xlab}\NormalTok{(}\DataTypeTok{label =} \StringTok{""}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{ylab}\NormalTok{(}\DataTypeTok{label =} \StringTok{"Death toll"}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{coord_flip}\NormalTok{() }\OperatorTok{+}
+\StringTok{      }\KeywordTok{theme_light}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{stormfinal_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+The second plot presents Injuries by Event type
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{StormData }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{select}\NormalTok{(INJURIES, EVTYPE) }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{group_by}\NormalTok{(EVTYPE) }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{SumINJURIES =} \KeywordTok{sum}\NormalTok{(INJURIES)) }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{top_n}\NormalTok{(}\DataTypeTok{n =} \DecValTok{8}\NormalTok{, }\DataTypeTok{wt =}\NormalTok{ SumINJURIES) }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ SumINJURIES, }\DataTypeTok{x =} \KeywordTok{reorder}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ EVTYPE, }\DataTypeTok{X =}\NormalTok{ SumINJURIES), }\DataTypeTok{fill=}\NormalTok{EVTYPE))}\OperatorTok{+}
+\StringTok{      }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{, }\DataTypeTok{show.legend =} \OtherTok{FALSE}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\CommentTok{#geom_text(aes(label=SumINJURIES), size = 4, hjust = 0.5, vjust = -0.1) +}
+\StringTok{      }\KeywordTok{xlab}\NormalTok{(}\DataTypeTok{label =} \StringTok{""}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{ylab}\NormalTok{(}\DataTypeTok{label =} \StringTok{"INJURIES"}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{coord_flip}\NormalTok{() }\OperatorTok{+}
+\StringTok{      }\KeywordTok{theme_light}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{stormfinal_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\section{Which types of events have the greatest economic
+consequences?}\label{which-types-of-events-have-the-greatest-economic-consequences}
+
+This plot shows Property damage estimates by Event type
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{StormData }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{select}\NormalTok{(PROPDMG, PROPDMGEXP2, EVTYPE) }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{group_by}\NormalTok{(EVTYPE) }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{SumPROPDMGEXP =}\NormalTok{ (PROPDMG }\OperatorTok{*}\StringTok{ }\NormalTok{PROPDMGEXP2)) }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{SumPROPDMGEXP2 =} \KeywordTok{sum}\NormalTok{(SumPROPDMGEXP)) }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{top_n}\NormalTok{(}\DataTypeTok{n =} \DecValTok{8}\NormalTok{, }\DataTypeTok{wt =}\NormalTok{ SumPROPDMGEXP2) }\OperatorTok{%>%}
+\StringTok{      }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ SumPROPDMGEXP2, }\DataTypeTok{x =} \KeywordTok{reorder}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ EVTYPE, }\DataTypeTok{X =}\NormalTok{ SumPROPDMGEXP2), }\DataTypeTok{fill=}\NormalTok{EVTYPE))}\OperatorTok{+}
+\StringTok{      }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{, }\DataTypeTok{show.legend =} \OtherTok{FALSE}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\CommentTok{#geom_text(aes(label=SumFATALITIES), size = 4, hjust = 0.5, vjust = -0.1) +}
+\StringTok{      }\KeywordTok{xlab}\NormalTok{(}\DataTypeTok{label =} \StringTok{""}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{ylab}\NormalTok{(}\DataTypeTok{label =} \StringTok{"Property damage estimates"}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{coord_flip}\NormalTok{() }\OperatorTok{+}
+\StringTok{      }\KeywordTok{theme_light}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{stormfinal_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\section{Conclusion}\label{conclusion}
+
+\paragraph{As you can see above flood has the greatest economic
+consequences. Tornado is the most harmful to population health because
+caused the most death tolls and
+injuries.}\label{as-you-can-see-above-flood-has-the-greatest-economic-consequences.-tornado-is-the-most-harmful-to-population-health-because-caused-the-most-death-tolls-and-injuries.}
+
+
+\end{document}
